@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/hu.daroczi.demo.vcheckers" >
+    <item
+        app:state_filled="true"
+        app:state_checked="false"
+        app:state_dragged="false"
+        android:drawable="@drawable/fatmole" />
+    <item
+        app:state_filled="true"
+        app:state_checked="true"
+        app:state_dragged="false"
+        android:drawable="@drawable/fatmole_selected" />
+    <item
+        app:state_filled="false"
+        app:state_checked="false"
+        app:state_dragged="false"
+        android:drawable="@drawable/earth" />
+    <item
+        app:state_filled="true"
+        app:state_checked="false"
+        app:state_dragged="true"
+        android:drawable="@drawable/earth" />
+    <item
+        app:state_filled="true"
+        app:state_checked="true"
+        app:state_dragged="true"
+        android:drawable="@drawable/earth" />
+    <item
+        app:state_filled="false"
+        app:state_checked="false"
+        app:state_dragged="true"
+        android:drawable="@drawable/earth" />
+</selector>

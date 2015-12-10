@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<row position="1">
+		<cell position="1"><![CDATA[-1]]></cell>
+		<cell position="2"><![CDATA[-1]]></cell>
+		<cell position="3"><![CDATA[1]]></cell>
+		<cell position="4"><![CDATA[1]]></cell>
+		<cell position="5"><![CDATA[1]]></cell>
+		<cell position="6"><![CDATA[-1]]></cell>
+		<cell position="7"><![CDATA[-1]]></cell>
+	</row>
+	<row position="2">
+		<cell position="1"><![CDATA[-1]]></cell>
+		<cell position="2"><![CDATA[-1]]></cell>
+		<cell position="3"><![CDATA[1]]></cell>
+		<cell position="4"><![CDATA[1]]></cell>
+		<cell position="5"><![CDATA[1]]></cell>
+		<cell position="6"><![CDATA[-1]]></cell>
+		<cell position="7"><![CDATA[-1]]></cell>
+	</row>
+    <row position="3">
+        <cell position="1"><![CDATA[1]]></cell>
+        <cell position="2"><![CDATA[1]]></cell>
+        <cell position="3"><![CDATA[1]]></cell>
+        <cell position="4"><![CDATA[1]]></cell>
+        <cell position="5"><![CDATA[1]]></cell>
+        <cell position="6"><![CDATA[1]]></cell>
+        <cell position="7"><![CDATA[1]]></cell>
+    </row>
+    <row position="4">
+        <cell position="1"><![CDATA[1]]></cell>
+        <cell position="2"><![CDATA[1]]></cell>
+        <cell position="3"><![CDATA[1]]></cell>
+        <cell position="4"><![CDATA[0]]></cell>
+        <cell position="5"><![CDATA[1]]></cell>
+        <cell position="6"><![CDATA[1]]></cell>
+        <cell position="7"><![CDATA[1]]></cell>
+    </row>
+    <row position="5">
+        <cell position="1"><![CDATA[1]]></cell>
+        <cell position="2"><![CDATA[1]]></cell>
+        <cell position="3"><![CDATA[1]]></cell>
+        <cell position="4"><![CDATA[1]]></cell>
+        <cell position="5"><![CDATA[1]]></cell>
+        <cell position="6"><![CDATA[1]]></cell>
+        <cell position="7"><![CDATA[1]]></cell>
+    </row>
+    <row position="6">
+        <cell position="1"><![CDATA[-1]]></cell>
+        <cell position="2"><![CDATA[-1]]></cell>
+        <cell position="3"><![CDATA[1]]></cell>
+        <cell position="4"><![CDATA[1]]></cell>
+        <cell position="5"><![CDATA[1]]></cell>
+        <cell position="6"><![CDATA[-1]]></cell>
+        <cell position="7"><![CDATA[-1]]></cell>
+    </row>
+    <row position="7">
+        <cell position="1"><![CDATA[-1]]></cell>
+        <cell position="2"><![CDATA[-1]]></cell>
+        <cell position="3"><![CDATA[1]]></cell>
+        <cell position="4"><![CDATA[1]]></cell>
+        <cell position="5"><![CDATA[1]]></cell>
+        <cell position="6"><![CDATA[-1]]></cell>
+        <cell position="7"><![CDATA[-1]]></cell>
+    </row>
+</table>
