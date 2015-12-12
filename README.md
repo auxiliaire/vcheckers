@@ -1,0 +1,2 @@
+# vcheckers
+Android game prototype
