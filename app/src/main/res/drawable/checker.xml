@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/hu.daroczi.demo.vcheckers" >
+    xmlns:app="http://schemas.android.com/apk/res/hu.daroczi.demo.vcheckers" ><!-- android:exitFadeDuration="@android:integer/config_shortAnimTime" >-->
     <item
         app:state_filled="true"
         app:state_checked="false"
         app:state_dragged="false"
+        app:state_hiding="false"
         android:drawable="@drawable/fatmole" />
     <item
         app:state_filled="true"
         app:state_checked="true"
         app:state_dragged="false"
+        app:state_hiding="false"
         android:drawable="@drawable/fatmole_selected" />
+    <item
+        app:state_filled="true"
+        app:state_checked="false"
+        app:state_dragged="false"
+        app:state_hiding="true"
+        android:drawable="@drawable/fatmole" />
     <item
         app:state_filled="false"
         app:state_checked="false"
         app:state_dragged="false"
+        app:state_hiding="false"
         android:drawable="@drawable/earth" />
     <item
         app:state_filled="true"
         app:state_checked="false"
         app:state_dragged="true"
+        app:state_hiding="false"
         android:drawable="@drawable/earth" />
     <item
         app:state_filled="true"
         app:state_checked="true"
         app:state_dragged="true"
+        app:state_hiding="false"
         android:drawable="@drawable/earth" />
     <item
         app:state_filled="false"
         app:state_checked="false"
         app:state_dragged="true"
+        app:state_hiding="false"
         android:drawable="@drawable/earth" />
 </selector>

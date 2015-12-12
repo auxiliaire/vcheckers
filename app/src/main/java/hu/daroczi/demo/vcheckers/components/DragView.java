@@ -1,6 +1,7 @@
 package hu.daroczi.demo.vcheckers.components;
 
 import hu.daroczi.demo.vcheckers.R;
+import hu.daroczi.demo.vcheckers.util.MyLog;
 
 import java.util.ArrayList;
 
@@ -51,9 +52,11 @@ public class DragView extends ImageView implements OnTouchListener {
 
 	private boolean isPointInsideView(float x, float y, View view) {
 		int location[] = new int[2];
-		view.getLocationOnScreen(location);
+		view.getLocationInWindow(location);
 		int viewX = location[0];
 		int viewY = location[1];
+        // The drag_holder layout y can be affected by systemui, so we calculate that:
+        y = y + ((View)this.getParent()).getY();
 
 		// point is inside view bounds
 		if ((x > viewX && x < (viewX + view.getWidth()))
@@ -77,7 +80,7 @@ public class DragView extends ImageView implements OnTouchListener {
 	public boolean onTouch(View v, MotionEvent event) {
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {
 			Checker checker = getCheckerAt(event.getX(),
-					event.getY() + bitmap.getHeight());
+                    event.getY());
 			if (null != checker && checker.isFilled()) {
 				isDragging = true;
 				checker.toggle();
@@ -91,7 +94,7 @@ public class DragView extends ImageView implements OnTouchListener {
 		if (event.getAction() == MotionEvent.ACTION_UP) {
 			isDragging = false;
 			Checker checker = getCheckerAt(event.getX(),
-					event.getY() + bitmap.getHeight());
+					event.getY());
 			if (null != checker) {
 				checker.toggle();
 			}

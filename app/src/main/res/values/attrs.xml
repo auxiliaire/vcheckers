@@ -15,6 +15,7 @@
         <attr name="state_checked" format="boolean" />
         <attr name="state_filled" format="boolean" />
         <attr name="state_dragged" format="boolean" />
+        <attr name="state_hiding" format="boolean" />
     </declare-styleable>
 
 </resources>

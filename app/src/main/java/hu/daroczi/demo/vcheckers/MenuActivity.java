@@ -87,7 +87,7 @@ public class MenuActivity extends Activity implements CheckerToggleListener {
 
         dragView = (DragView) findViewById(R.id.drag_view);
 
-		tableLayout = (CheckerTable) findViewById(R.id.fullscreen_content);
+		tableLayout = (CheckerTable) contentView; //findViewById(R.id.fullscreen_content);
 
 		tableLayout.setStretchAllColumns(true);
 		tableLayout.requestFocus();
@@ -272,7 +272,8 @@ public class MenuActivity extends Activity implements CheckerToggleListener {
 								(Cell) this.selected.getTag(),
 								(Cell) checker.getTag());
 						Checker middleButton = findCheckerByCell(middle);
-						middleButton.setFilled(false);
+						//middleButton.setFilled(false);
+                        middleButton.setHiding();
 						this.selected.setFilled(false);
 						this.selected = null;
 					} else {

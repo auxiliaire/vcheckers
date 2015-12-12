@@ -15,21 +15,24 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
-public class Checker extends ImageButton implements OnTouchListener {
+public class Checker extends ImageButton implements OnTouchListener, Animation.AnimationListener {
 
 	private static final int[] STATE_FILLED = { R.attr.state_filled };
 	private static final int[] STATE_CHECKED = { R.attr.state_checked };
 	private static final int[] STATE_DRAGGED = { R.attr.state_dragged };
+	private static final int[] STATE_HIDING = { R.attr.state_hiding };
 
 	private boolean filled = false;
 	private boolean checked = false; // selected
 	private boolean dragged = false;
+    private boolean hiding = false;
 
 	private int col;
 	private int row;
 
 	private Animation selectAnim;
 	private Animation deselectAnim;
+    private Animation hidingAnim;
 	private int deselectColor = Color.argb(60, 0, 10, 10);
 
 	private ArrayList<CheckerToggleListener> checkerToggleListeners = new ArrayList<CheckerToggleListener>();
@@ -58,14 +61,17 @@ public class Checker extends ImageButton implements OnTouchListener {
 				R.anim.checker_select_anim);
 		deselectAnim = AnimationUtils.loadAnimation(getContext(),
 				R.anim.checker_deselect_anim);
+        hidingAnim = AnimationUtils.loadAnimation(getContext(),
+                R.anim.checker_hiding_anim);
+        hidingAnim.setAnimationListener(this);
 		setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				toggle();
-			}
+            @Override
+            public void onClick(View v) {
+                toggle();
+            }
 
-		});
+        });
 
 		// setOnTouchListener(this);
 
@@ -145,6 +151,11 @@ public class Checker extends ImageButton implements OnTouchListener {
 		refreshDrawableState();
 	}
 
+    public void setHiding() {
+        this.hiding = true;
+        startAnimation(hidingAnim);
+    }
+
 	@Override
 	public int[] onCreateDrawableState(int extraSpace) {
 		final int[] drawableState = super.onCreateDrawableState(extraSpace + 3);
@@ -183,5 +194,20 @@ public class Checker extends ImageButton implements OnTouchListener {
 		invalidate();
 		return true;
 	}
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+        setFilled(false);
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
 
 }
