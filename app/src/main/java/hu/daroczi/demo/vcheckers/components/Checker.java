@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -36,6 +38,11 @@ public class Checker extends ImageButton implements OnTouchListener, Animation.A
 	private int deselectColor = Color.argb(60, 0, 10, 10);
 
 	private ArrayList<CheckerToggleListener> checkerToggleListeners = new ArrayList<CheckerToggleListener>();
+
+    public static final int S1 = R.raw.pop;
+    private static SoundPool soundPool = null;
+    private static int soundId;
+    private static boolean spLoaded = false;
 
 	public Checker(Context context) {
 		super(context);
@@ -72,6 +79,7 @@ public class Checker extends ImageButton implements OnTouchListener, Animation.A
             }
 
         });
+        initSound(this.getContext());
 
 		// setOnTouchListener(this);
 
@@ -79,6 +87,30 @@ public class Checker extends ImageButton implements OnTouchListener, Animation.A
 		// setColorFilter(deselectColor);
 
 	}
+
+    private static void initSound(Context context) {
+        soundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 100);
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                spLoaded = true;
+            }
+        });
+        soundId = soundPool.load(context, R.raw.pop, 1);
+    }
+
+    public static void playSound(Context context) {
+        if(soundPool == null){
+            initSound(context);
+        }
+        float volume = 1f; // whatever in the range = 0.0 to 1.0
+
+        // play sound with same right and left volume, with a priority of 1,
+        // zero repeats (i.e play once), and a playback rate of 1f
+        if (spLoaded) {
+            soundPool.play(soundId, volume, volume, 1, 0, 1f);
+        }
+    }
 
 	public void toggle() {
 		if (isFilled()) {
@@ -153,6 +185,7 @@ public class Checker extends ImageButton implements OnTouchListener, Animation.A
 
     public void setHiding() {
         this.hiding = true;
+        playSound(this.getContext());
         startAnimation(hidingAnim);
     }
 
